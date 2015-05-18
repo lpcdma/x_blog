@@ -1,0 +1,27 @@
+title: "windows补丁探测"
+date: 2013-06-05 21:09:42
+tags:
+id: 161
+categories:
+  - 学习笔记
+---
+
+<pre class="brush:cpp">systeminfo&gt;a.txt&amp;(for %i in (KB2360937 KB2478960 KB2507938 KB2566454 KB2646524 KB2645640 KB2641653 KB944653 KB952004 KB971657 KB2620712 KB2393802 kb942831 KB2503665 KB2592799) do @type a.txt|@find /i "%i"||@echo %i Not Installed!)&amp;del /f /q /a a.txt</pre>
+<pre class="brush:cpp">KB2360937 MS10-084  
+KB2478960 MS11-014  
+KB2507938 MS11-056  
+KB2566454 MS11-062  
+KB2646524 MS12-003  
+KB2645640 MS12-009  
+KB2641653 MS12-018  
+KB944653 MS07-067  
+KB952004 MS09-012  
+KB971657 MS09-041  
+KB2620712 MS11-097  
+KB2393802 MS11-011  
+kb942831 MS08-005  
+KB2503665 MS11-046  
+KB2592799 MS11-080</pre>
+&nbsp;
+
+&nbsp;
