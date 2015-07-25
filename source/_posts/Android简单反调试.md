@@ -5,7 +5,7 @@ categories:
   - 学习笔记
 ---
 
-＃原理
+##原理
 开一个线程去检测/proc/$pid/status中的TracerPid
 
 - 未调试状态TracerPid ＝ 0
