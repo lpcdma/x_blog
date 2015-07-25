@@ -5,7 +5,6 @@ id: 714
 comment: false
 categories:
   - 学习笔记
-  - 工具收集
 ---
 
-[![windbg](http://lpcdma.com/wp-content/uploads/2014/08/windbg-300x180.jpg)](http://lpcdma.com/wp-content/uploads/2014/08/windbg.jpg)
+[![windbg](http://lpcdma.com/wp-content/uploads/2014/08/windbg.jpg)](http://lpcdma.com/wp-content/uploads/2014/08/windbg.jpg)
