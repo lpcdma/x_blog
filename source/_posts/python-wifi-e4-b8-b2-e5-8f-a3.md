@@ -6,7 +6,8 @@ comment: false
 ---
 
 最近做个东西需要串口各种串口，无线的方便点
-[code lang="c"]
+```
+
 import socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.connect(('192.168.1.1', 2001))
@@ -228,4 +229,5 @@ if(rcv_ptr &lt;n-1) {
   } /* while */
  }
 
-[/code]
+
+```

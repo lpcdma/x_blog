@@ -5,11 +5,13 @@ id: 72
 comment: false
 ---
 
-[code lang="c"]
+```
+
 reg add &quot;HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindowsCurrentVersionExplorerShell Icons&quot; /v 29 /d &quot;%systemroot%system32imageres.dll,196&quot; /t reg_sz /f
 taskkill /f /im explorer.exe
 attrib -s -r -h &quot;%userprofile%AppDataLocaliconcache.db&quot;
 del &quot;%userprofile%AppDataLocaliconcache.db&quot; /f /q
 start explorer
 
-[/code]
+
+```

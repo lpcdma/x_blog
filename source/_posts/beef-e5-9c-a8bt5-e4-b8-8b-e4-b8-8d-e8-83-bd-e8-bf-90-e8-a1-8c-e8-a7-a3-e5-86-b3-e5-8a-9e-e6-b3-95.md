@@ -9,18 +9,28 @@ comment: false
  这是一个偶然，晚上在使用wpscan时升级后发现不能用了，提示安装什么东东，
  安装了也不行，
  然后看到提示后面有个or
- [code lang="c"]gem install –user-install[/code]
+ ```
+gem install –user-install
+```
+
  用这个命令安装好就可以了，灵机一动那么beef是否也可以呢？
  结果肯定是令人欣慰的！！！！
  在msf中使用可能遇到–hpricot这类问题。
  安装
- [code lang="c"]gem isntall –user-install hpricot or gem install hpricot[/code]
+ ```
+gem isntall –user-install hpricot or gem install hpricot
+```
+
  都行不通后也是有办法的，
  原因是在bt5中，msf使用的ruby环境变量是在：
- [code lang="c"]root@bt:/opt/metasploit/ruby#[/code]
+ ```
+root@bt:/opt/metasploit/ruby#
+```
+
  所以也就找不到hpricot
  使用
-[code lang="c"]
+```
+
  root@bt:/opt/metasploit/ruby# cd /
  root@bt:/# find -name hpricot
  ./var/lib/gems/1.9.2/doc/hpricot-0.8.6/rdoc/lib/hpricot
@@ -30,9 +40,12 @@ comment: false
  ./root/.gem/ruby/1.9.2/doc/hpricot-0.8.6/rdoc/lib/hpricot
  ./root/.gem/ruby/1.9.2/gems/hpricot-0.8.6/lib/hpricot
  root@bt:/#cp /root/.gem/ruby/1.9.2/gems/hpricot-0.8.6/ /opt/metasploit/ruby/lib/ruby/gems/1.9.1/gems/
-[/code]
+
+```
+
  这样问题就能解决。。。
-[code lang="c"]
+```
+
 root@bt:/pentest/web/beef# ./beef
 /pentest/web/beef/core/loader.rb:18:in `require’: no such file to load — bundler/setup (LoadError)
 from /pentest/web/beef/core/loader.rb:18:in `&lt;top (required)&gt;’
@@ -73,4 +86,5 @@ root@bt:/pentest/web/beef# ./beef
 [21:28:10]    |_  UI URL:   http://180.8*.*.*:3000/ui/panel
 [21:28:10][+] HTTP Proxy: http://127.0.0.1:6789
 [21:28:10][*] BeEF server started (press control+c to stop)
-[/code]
+
+```

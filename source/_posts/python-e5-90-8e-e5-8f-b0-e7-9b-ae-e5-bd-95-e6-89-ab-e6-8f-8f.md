@@ -5,7 +5,8 @@ id: 6
 comment: false
 ---
 
-[code lang="py"]
+```
+
 import httplib
 import socket
 import sys
@@ -67,4 +68,5 @@ print var1, &quot; Admin pages found&quot;
 print var2, &quot; total pages scanned&quot;
 raw_input(&quot;[/] The Game Over; Press Enter to Exit&quot;)
 
-[/code]
+
+```

