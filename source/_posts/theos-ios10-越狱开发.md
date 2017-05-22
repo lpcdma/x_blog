@@ -1,7 +1,7 @@
 title: theos(ios10)越狱开发
 date: 2017-05-22 10:16:07
 categories: 学习笔记
-tags: [arm theos]
+tags: [arm,theos]
 ---
 
 ## 初识
