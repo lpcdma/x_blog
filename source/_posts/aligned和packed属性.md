@@ -6,13 +6,13 @@ tags: [yunos,clang,gcc,packed,编译器]
 
 ### 问题描述
 这是一个结构体buffer,用hexdump出来的数据.
-![buffer dump](images/aligned_packed/1.png)
+![buffer dump](http://lpcdma.com/images/aligned_packed/1.png)
 结构体的定义
-![define struct](images/aligned_packed/2.png)
+![define struct](http://lpcdma.com/images/aligned_packed/2.png)
 结构体值打印
-![struct print](images/aligned_packed/2.png)
+![struct print](http://lpcdma.com/images/aligned_packed/2.png)
 测试代码
-![test code](images/aligned_packed/0.png)
+![test code](http://lpcdma.com/images/aligned_packed/0.png)
 正常情况下.accessFlags的值应该是0x00000001,
 但是不知道为什么,
 格式化这个buffer的时候直接跳过了 01 00 这两个字节
